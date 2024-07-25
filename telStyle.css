@@ -33,7 +33,7 @@ h1{
     width: 85%;
     flex-wrap: wrap;
 }
-label, input, .screen, .telefone, button, .circle{
+label, input, .screen, .telefone, button, .circle, .output{
     position: absolute;
 }
 label{
@@ -77,6 +77,10 @@ button:hover{
     height: 15px;
     top: 3.5%;
     left: 47%;
+}
+.output{
+    top: 20%;
+    color: #0a0a0a;
 }
 @media (max-width: 1450px) {
     label{
