@@ -1,25 +1,29 @@
-const txtInput = document.getElementById("user-input");
-const checkBtn = document.getElementById("check-btn");
-const clearBtn = document.getElementById("clear-btn");
-const output = document.getElementById("results-div")
+const output = document.getElementById("results-div");
+
 const clear = () => {
-  txtInput.value="";
-  output.textContent="";
+  txtInput.value = "";
+  output.textContent = "";
 }
-clearBtn.addEventListener("click",clear);
-const symbolRegex = /[()\-.\s]/g;
-const regex = /^\d{10}$/;
-const oneRegex = /^1\d{10}$/;
+
+clearBtn.addEventListener("click", clear);
+
+const strictRegex = /^1?[-.\s]?(\([2-9]\d{2}\)|[2-9]\d{2})[-.\s]?\d{3}[-.\s]?\d{4}$/;
+
 const result = () => {
-   if(txtInput.value===""){
-     alert("Please provide a phone number");
-   }
-    const cleanedNumber = txtInput.value.replace(symbolRegex, "");
-  
-    if (regex.test(cleanedNumber) || oneRegex.test(cleanedNumber)) {
-      output.textContent = `Valid US number: ${txtInput.value}`;
-    } else {
-      output.textContent = `Invalid US number: ${txtInput.value}`;
-    }
+  const userInput = txtInput.value;
+  const cleanedNumber = userInput.trim().replace(/[^\d]/g, ''); 
+
+  if (userInput === "") {
+    alert("Please provide a phone number");
+    return;
   }
+
+
+  if (strictRegex.test(userInput)) {
+    output.textContent = `Valid US number: ${userInput}`;
+  } else {
+    output.textContent = `Invalid US number: ${userInput}`;
+  }
+}
+
 checkBtn.addEventListener("click", result);
