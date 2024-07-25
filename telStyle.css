@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #c18109, #c48512, #c7891a, #ca8e20, #cd9226, #cd8e25, #ce8b25, #ce8725, #cb7a20, #c86d1c, #c5601a, #c1521a);
+}
+h1{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #f4f4f4;
+}
+.telefone{
+    background-color: #0a0a0a;
+    width: 15vw;
+    height: 55vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    min-width: 200px;
+    min-height: 300px;
+}
+.screen{
+    background: #999;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 85%;
+    flex-wrap: wrap;
+}
+label, input, .screen, .telefone, button, .circle{
+    position: absolute;
+}
+label{
+    top:2%;
+    left: 6.9%;
+    color: #0a0a0a;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input{
+    top: 10%;
+    width: 90%;
+    left: 5%;
+    color:#0a0a0a;
+    font-weight: 600;
+}
+#clear-btn{
+    bottom: 3%;
+    right: 9%;
+}
+#check-btn{
+    bottom: 3%;
+    left: 9%;
+}
+button{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0a0a0a;
+    background-color: #999;
+    font-weight: bold;
+}
+button:hover{
+    background-color: #ca8e20;
+}
+.circle{
+    border-radius: 50%;
+    background-color: #999;
+    width: 15px;
+    height: 15px;
+    top: 3.5%;
+    left: 47%;
+}
+@media (max-width: 1450px) {
+    label{
+        font-size: 0.8rem;
+    }
+}
